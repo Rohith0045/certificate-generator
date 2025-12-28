@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  /* Premium Color Palette */
+  --color-bg-dark: #0f172a;
+  --color-primary: #3b82f6;
+  --color-accent: #f59e0b; /* Gold */
+  --color-glass: rgba(255, 255, 255, 0.1);
+  --color-glass-border: rgba(255, 255, 255, 0.2);
+  --color-text-light: #f8fafc;
+  --color-text-dim: #94a3b8;
+  --color-paper: #ffffff;
+  --color-ink: #1e293b;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+
+  /* Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+
+  /* Shadows */
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+  --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-light);
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, #0f172a 100%);
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3rem;
+  background: linear-gradient(to right, #fff, #94a3b8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.font-serif {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Utilities */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+  display: flex;
+  gap: var(--spacing-xl);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.glass-panel {
+  background: var(--color-glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.input-group {
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.input-label {
+  font-size: 0.9rem;
+  color: var(--color-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.input-field {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--color-glass-border);
+  color: white;
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.btn {
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Certificate Styles (Paper emulation) */
+.certificate-container {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  width: 800px; /* Standard Aspect Ratio */
+  height: 600px;
+  padding: 40px;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 20px solid #f8f9fa;
+  outline: 5px solid var(--color-accent);
+}
+
+.certificate-border {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  border: 2px solid var(--color-accent);
+  pointer-events: none;
+}
+
+.cert-header {
+  font-size: 3.5rem;
+  color: var(--color-accent);
+  margin-bottom: 20px;
+}
+
+.cert-body {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 80%;
+}
+
+.cert-name {
+  font-size: 3rem;
+  color: var(--color-ink);
+  margin: 10px 0;
+  border-bottom: 2px solid var(--color-text-dim);
+  padding: 0 20px;
+}
+
+.cert-course {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.cert-footer {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 40px;
+}
+
+.signature-line {
+  border-top: 1px solid var(--color-ink);
+  width: 200px;
+  padding-top: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+}

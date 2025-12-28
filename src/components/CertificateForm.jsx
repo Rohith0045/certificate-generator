@@ -43,6 +43,17 @@ const CertificateForm = ({ data, onChange }) => {
                 />
             </div>
             <div className="input-group">
+                <label className="input-label">Director Name</label>
+                <input
+                    type="text"
+                    name="directorName"
+                    value={data.directorName}
+                    onChange={handleChange}
+                    className="input-field"
+                    placeholder="e.g. Director Name"
+                />
+            </div>
+            <div className="input-group">
                 <label className="input-label">Date</label>
                 <input
                     type="date"

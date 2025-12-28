@@ -26,7 +26,7 @@ const CertificatePreview = ({ data, id }) => {
                         <div>Instructor</div>
                     </div>
                     <div className="signature-section">
-                        <div className="signature-line">Antigravity</div>
+                        <div className="signature-line">{data.directorName || '[Director]'}</div>
                         <div>Director</div>
                     </div>
                 </div>

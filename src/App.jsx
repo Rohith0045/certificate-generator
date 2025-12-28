@@ -9,6 +9,7 @@ function App() {
     recipientName: '',
     courseTitle: '',
     instructorName: '',
+    directorName: '',
     date: new Date().toISOString().split('T')[0],
     description: 'For successfully completing the comprehensive course requirements with excellence.',
   });

@@ -4,7 +4,8 @@
   /* Premium Color Palette */
   --color-bg-dark: #0f172a;
   --color-primary: #3b82f6;
-  --color-accent: #f59e0b; /* Gold */
+  --color-accent: #f59e0b;
+  /* Gold */
   --color-glass: rgba(255, 255, 255, 0.1);
   --color-glass-border: rgba(255, 255, 255, 0.2);
   --color-text-light: #f8fafc;
@@ -53,7 +54,9 @@ body {
 }
 
 /* Typography */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: 700;
   line-height: 1.2;
 }
@@ -148,7 +151,8 @@ h1 {
 .certificate-container {
   background: var(--color-paper);
   color: var(--color-ink);
-  width: 800px; /* Standard Aspect Ratio */
+  width: 800px;
+  /* Standard Aspect Ratio */
   height: 600px;
   padding: 40px;
   position: relative;
@@ -211,4 +215,121 @@ h1 {
   padding-top: 5px;
   font-size: 1rem;
   font-weight: 600;
+}
+
+/* Logo */
+.cert-logo {
+  max-height: 80px;
+  margin-bottom: 20px;
+  object-fit: contain;
+}
+
+
+/* --- Templates --- */
+
+/* Classic (Default) */
+.certificate-container.classic {
+  font-family: 'Playfair Display', serif;
+  border: 20px solid #f8f9fa;
+  outline: 5px solid var(--color-accent);
+}
+
+/* Modern */
+.certificate-container.modern {
+  font-family: 'Outfit', sans-serif;
+  background: white;
+  border: none;
+  outline: none;
+  border-left: 30px solid var(--color-primary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.certificate-container.modern .certificate-border {
+  border: none;
+  background-image: linear-gradient(45deg, var(--color-primary) 25%, transparent 25%, transparent 75%, var(--color-primary) 75%, var(--color-primary));
+  background-size: 20px 20px;
+  opacity: 0.1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.certificate-container.modern .cert-header {
+  background: none;
+  -webkit-text-fill-color: initial;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.certificate-container.modern .cert-name {
+  color: #1e293b;
+  border-bottom: none;
+  font-weight: 800;
+}
+
+/* Minimal */
+.certificate-container.minimal {
+  font-family: 'Outfit', sans-serif;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  outline: none;
+}
+
+.certificate-container.minimal .certificate-border {
+  display: none;
+}
+
+.certificate-container.minimal .cert-header {
+  background: none;
+  -webkit-text-fill-color: initial;
+  color: #334155;
+  font-weight: 300;
+  font-size: 2.5rem;
+}
+
+.certificate-container.minimal .cert-name {
+  font-weight: 300;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+/* Elegant */
+.certificate-container.elegant {
+  font-family: 'Playfair Display', serif;
+  background: #fff;
+  border: 4px double var(--color-accent);
+  outline: 2px solid var(--color-bg-dark);
+  outline-offset: 5px;
+}
+
+.certificate-container.elegant .cert-header {
+  background: none;
+  -webkit-text-fill-color: initial;
+  color: var(--color-accent);
+  font-style: italic;
+}
+
+/* Creative */
+.certificate-container.creative {
+  font-family: 'Outfit', sans-serif;
+  background: #1e293b;
+  color: #f8fafc;
+  border: none;
+  outline: 4px dashed var(--color-primary);
+  outline-offset: -15px;
+}
+
+.certificate-container.creative .cert-name {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+.certificate-container.creative .signature-line {
+  border-top-color: #f8fafc;
+}
+
+.certificate-container.creative .cert-body {
+  color: #cbd5e1;
 }

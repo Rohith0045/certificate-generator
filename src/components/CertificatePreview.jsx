@@ -1,10 +1,14 @@
 import React from 'react';
 
 const CertificatePreview = ({ data, id }) => {
+    const { template, logo } = data;
+
     return (
         <div style={{ overflow: 'auto', padding: '20px' }}>
-            <div id={id} className="certificate-container font-serif">
+            <div id={id} className={`certificate-container ${template || 'classic'}`}>
                 <div className="certificate-border"></div>
+
+                {logo && <img src={logo} alt="Logo" className="cert-logo" />}
 
                 <h1 className="cert-header">Certificate of Appreciation</h1>
 

@@ -9,6 +9,42 @@ const CertificateForm = ({ data, onChange }) => {
     return (
         <div className="glass-panel">
             <h2>Certificate Details</h2>
+
+            <div className="input-group">
+                <label className="input-label">Select Template</label>
+                <select
+                    name="template"
+                    value={data.template}
+                    onChange={handleChange}
+                    className="input-field"
+                >
+                    <option value="classic">Classic Serif</option>
+                    <option value="modern">Modern Tech</option>
+                    <option value="minimal">Minimal Clean</option>
+                    <option value="elegant">Elegant Gold</option>
+                    <option value="creative">Creative Dark</option>
+                </select>
+            </div>
+
+            <div className="input-group">
+                <label className="input-label">Upload Logo</label>
+                <input
+                    type="file"
+                    accept="image/*"
+                    onChange={(e) => {
+                        const file = e.target.files[0];
+                        if (file) {
+                            const reader = new FileReader();
+                            reader.onloadend = () => {
+                                onChange({ ...data, logo: reader.result });
+                            };
+                            reader.readAsDataURL(file);
+                        }
+                    }}
+                    className="input-field"
+                />
+            </div>
+
             <div className="input-group">
                 <label className="input-label">Recipient Name</label>
                 <input

@@ -12,6 +12,8 @@ function App() {
     directorName: '',
     date: new Date().toISOString().split('T')[0],
     description: 'For successfully completing the comprehensive course requirements with excellence.',
+    logo: null,
+    template: 'classic',
   });
 
   const handleDownload = () => {
